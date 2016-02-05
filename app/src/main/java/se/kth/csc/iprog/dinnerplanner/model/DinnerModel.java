@@ -3,11 +3,12 @@ package se.kth.csc.iprog.dinnerplanner.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DinnerModel {
+public class DinnerModel implements IDinnerModel {
 	
 
 	Set<Dish> dishes = new HashSet<Dish>();
-	
+	private int nrOfGuests;
+	Set<Dish> selectedDishes = new HashSet<Dish>();
 	/**
 	 * TODO: For Lab2 you need to implement the IDinnerModel interface.
 	 * When you do this you will have all the needed fields and methods
@@ -94,7 +95,54 @@ public class DinnerModel {
 		}
 		return result;
 	}
-	
-	
 
+
+	@Override
+	public int getNumberOfGuests() {
+		return nrOfGuests;
+	}
+
+	@Override
+	public void setNumberOfGuests(int numberOfGuests) {
+		this.nrOfGuests = numberOfGuests < 0 ? Math.abs(numberOfGuests) : numberOfGuests;
+	}
+
+	@Override
+	public Dish getSelectedDish(int type) {
+		for(Dish d : selectedDishes){
+			if(d.getType() == type) return d;
+		}
+		return null;
+	}
+
+	@Override
+	public Set<Dish> getFullMenu() {
+		return selectedDishes;
+	}
+
+	@Override
+	public Set<Ingredient> getAllIngredients() {
+		Set<Ingredient> allIngredients = new HashSet<Ingredient>();
+		for(Dish d : selectedDishes){
+			for(Ingredient i : d.getIngredients()){
+				allIngredients.add(i);
+			}
+		}
+		return allIngredients;
+	}
+
+	@Override
+	public float getTotalMenuPrice() {
+		return 0;
+	}
+
+	@Override
+	public void addDishToMenu(Dish dish) {
+
+	}
+
+	@Override
+	public void removeDishFromMenu(Dish dish) {
+
+	}
 }

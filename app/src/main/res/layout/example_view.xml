@@ -5,10 +5,22 @@
     android:gravity="center"
     android:id="@+id/this_is_example_view_id" >
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/example_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:layout_weight="0.06" />
 
 </RelativeLayout>
