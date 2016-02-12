@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.WelcomeScreen"></activity>
+        <activity android:name=".view.ChooseMenu"></activity>
     </application>
 
 </manifest>
