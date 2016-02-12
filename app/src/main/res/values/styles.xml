@@ -2,6 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!--<item name="android:windowNoTitle">false</item>-->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTitleSize">55dp</item>
         <!-- Customize your theme here. -->
     </style>
 
