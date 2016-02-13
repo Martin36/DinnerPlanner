@@ -62,14 +62,14 @@
         android:paddingLeft="10dp">
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/bakedbrie_button"
             android:adjustViewBounds="true"
             android:src="@drawable/bakedbrie"
-            android:scaleType="center"
+            android:scaleType="centerInside"
+            android:background="@color/Black"
             />
-        <!-- android:background="@drawable/bakedbrie" -->
     </LinearLayout>
 
     <TextView
@@ -86,7 +86,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.32"
         android:weightSum="1"
         android:paddingLeft="10dp">
 
@@ -95,8 +94,63 @@
             android:layout_height="60dp"
             android:id="@+id/meatballs_button"
             android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             android:src="@drawable/meatballs"
+            android:background="@color/Black"
             />
         <!--android:background="@drawable/meatballs"-->
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dessert"
+        android:id="@+id/dessert"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:paddingLeft="10dp">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/icecream_button"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/icecream"
+            android:background="@color/Black"
+            />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/toast_button"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/toast"
+            android:background="@color/Black"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/create_menu_button"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/Red"
+            android:textColor="@color/White"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"/>
+    </RelativeLayout>
 </LinearLayout>
