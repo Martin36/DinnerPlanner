@@ -14,12 +14,11 @@ public class MainActivity extends Activity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    // Default call to load previous state
     super.onCreate(savedInstanceState);
     //Makes a request to change title bar
     this.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
     //Sets the screen to view the correct content
-//    setContentView(R.layout.activity_welcome_screen);
+    setContentView(R.layout.activity_main);
     //Sets the title bar
     this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar);
   }
