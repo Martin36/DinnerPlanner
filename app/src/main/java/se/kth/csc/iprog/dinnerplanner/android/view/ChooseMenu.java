@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -23,23 +24,11 @@ public class ChooseMenu{
 
   DinnerModel model;
   View view;
-/*
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_choose_menu);
-    //Create the spinner (drop down) object
-    Spinner nrGuests = (Spinner)view.findViewById(R.id.spinner);
-    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.participants,
-        android.R.layout.simple_spinner_dropdown_item);
-    //Specify the layout to use when the list of choices appears
-    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    //Apply the adapter to the spinner
-    nrGuests.setAdapter(adapter);
-  }
-  */
+
   public ChooseMenu(View view, DinnerModel model){
     this.view = view;
     this.model = model;
+    //Code to create the dropdown for choosing nr of guests
     Spinner nrGuests = (Spinner)view.findViewById(R.id.spinner);
     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(), R.array.participants,
         android.R.layout.simple_spinner_dropdown_item);
@@ -78,8 +67,8 @@ public class ChooseMenu{
           //The "number" of the current button
           String buttonID = "button" + buttonCounter;
           //Get button id
-          int resID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", MainActivity.PACKAGE_NAME);
-          ImageButton imageButton = (ImageButton) currentRowOfDishType.findViewById(resID);
+          int buttonResID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", MainActivity.PACKAGE_NAME);
+          ImageButton imageButton = (ImageButton) currentRowOfDishType.findViewById(buttonResID);
 
           String im = d.getImage();
           //Need to remove the ".jpg" from image name
@@ -89,6 +78,16 @@ public class ChooseMenu{
           int imageID = view.getResources().getIdentifier(im, "drawable", MainActivity.PACKAGE_NAME);
           //Add images to buttons
           imageButton.setImageResource(imageID);
+
+          //Set the name of the dish
+
+          //The id for the current buttons text view
+          String textViewID = "name" + buttonCounter;
+          //Convert to valid id
+          int textResID = currentRowOfDishType.getResources().getIdentifier(textViewID, "id", MainActivity.PACKAGE_NAME);
+          //Retrieves the current text view where the name of the dish is put
+          TextView textView = (TextView) currentRowOfDishType.findViewById(textResID);
+          textView.setText(d.getName());
         }
       }
     }

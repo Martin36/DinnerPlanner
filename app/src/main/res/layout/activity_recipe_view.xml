@@ -1,13 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipe_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="se.kth.csc.iprog.dinnerplanner.android.view.RecipeView">
+    tools:context="se.kth.csc.iprog.dinnerplanner.android.view.RecipeView"
+    android:weightSum="1">
 
-</RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/back_button"
+            android:background="@color/Red"
+            android:textColor="@color/White"
+            android:height="40dp"
+            android:width="100dp"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Cost: "
+            android:id="@+id/textView2"
+            android:textSize="30dp"
+            android:paddingLeft="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:text="0kr"
+            android:id="@+id/cost"
+            android:layout_weight="0.42"
+            android:textSize="30dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.11">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:id="@+id/instructions"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="96dp"
+            android:layout_marginEnd="96dp"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:weightSum="1"
+        android:paddingLeft="10dp"
+        >
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/ingredient_button"
+                android:background="@color/Gray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+                android:id="@+id/name1"
+                android:layout_below="@+id/ingredient_button"
+                android:layout_alignRight="@+id/ingredient_button"
+                android:gravity="center"
+                android:layout_alignEnd="@+id/ingredient_button"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/starter_button"
+                android:background="@color/Gray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Starter"
+                android:id="@+id/starter"
+                android:layout_below="@+id/starter_button"
+                android:layout_alignRight="@+id/starter_button"
+                android:gravity="center"
+                android:layout_alignEnd="@+id/starter_button"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/main_course_button"
+                android:background="@color/Gray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Course"
+                android:id="@+id/main_course"
+                android:layout_below="@+id/main_course_button"
+                android:layout_alignRight="@+id/main_course_button"
+                android:gravity="center"
+                android:layout_alignEnd="@+id/main_course_button"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/dessert_button"
+                android:background="@color/Gray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dessert"
+                android:id="@+id/dessert"
+                android:layout_below="@+id/dessert_button"
+                android:layout_alignRight="@+id/dessert_button"
+                android:gravity="center"
+                android:layout_alignEnd="@+id/dessert_button"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:id="@+id/description"
+        android:layout_weight="0.55"/>
+
+</LinearLayout>
