@@ -23,4 +23,6 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+    <string name="title_activity_choose_menu">ChooseMenuActivity</string>
+    <string name="title_activity_recipe">RecipeActivity</string>
 </resources>

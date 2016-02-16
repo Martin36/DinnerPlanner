@@ -1,4 +1,4 @@
-package se.kth.csc.iprog.dinnerplanner.android.view;
+package se.kth.csc.iprog.dinnerplanner.android;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import se.kth.csc.iprog.dinnerplanner.android.MainActivity;
 import se.kth.csc.iprog.dinnerplanner.android.R;
 
 
-public class WelcomeScreen extends MainActivity{
+public class WelcomeScreenActivity extends Activity{
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_welcome_screen);
+
 
   }
 }

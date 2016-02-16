@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/choose_menu"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Participants"
+            android:id="@+id/participants"
+            android:textSize="25dp"/>
+
+        <Spinner
+            android:layout_width="37dp"
+            android:layout_height="40dp"
+            android:id="@+id/spinner"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Total Cost: 0 kr"
+            android:id="@+id/total_cost"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Menu"
+        android:paddingLeft="10dp"
+        android:id="@+id/title"
+        android:textSize="45dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starter"
+        android:id="@+id/starter"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"/>
+
+    <include
+        android:id="@+id/starters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/course_images_layout" />
+    <!--
+    android:adjustViewBounds="true"
+    android:src="@drawable/bakedbrie"
+    android:scaleType="centerInside"
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Course"
+        android:id="@+id/main_course"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"/>
+
+    <include
+        android:id="@+id/main_courses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/course_images_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dessert"
+        android:id="@+id/dessert"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"/>
+
+    <include
+        android:id="@+id/desserts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/course_images_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/create_menu_button"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/Red"
+            android:textColor="@color/White"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.Iterator;
 import java.util.Set;
 
+import se.kth.csc.iprog.dinnerplanner.android.ChooseMenuActivity;
 import se.kth.csc.iprog.dinnerplanner.android.MainActivity;
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
@@ -67,7 +68,7 @@ public class ChooseMenu{
           //The "number" of the current button
           String buttonID = "button" + buttonCounter;
           //Get button id
-          int buttonResID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", MainActivity.PACKAGE_NAME);
+          int buttonResID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", ChooseMenuActivity.PACKAGE_NAME);
           ImageButton imageButton = (ImageButton) currentRowOfDishType.findViewById(buttonResID);
 
           String im = d.getImage();
@@ -75,7 +76,7 @@ public class ChooseMenu{
           im = im.replace(".jpg", "");
 
           //The ID for the drawable picture
-          int imageID = view.getResources().getIdentifier(im, "drawable", MainActivity.PACKAGE_NAME);
+          int imageID = view.getResources().getIdentifier(im, "drawable", ChooseMenuActivity.PACKAGE_NAME);
           //Add images to buttons
           imageButton.setImageResource(imageID);
 
@@ -84,7 +85,7 @@ public class ChooseMenu{
           //The id for the current buttons text view
           String textViewID = "name" + buttonCounter;
           //Convert to valid id
-          int textResID = currentRowOfDishType.getResources().getIdentifier(textViewID, "id", MainActivity.PACKAGE_NAME);
+          int textResID = currentRowOfDishType.getResources().getIdentifier(textViewID, "id", ChooseMenuActivity.PACKAGE_NAME);
           //Retrieves the current text view where the name of the dish is put
           TextView textView = (TextView) currentRowOfDishType.findViewById(textResID);
           textView.setText(d.getName());
