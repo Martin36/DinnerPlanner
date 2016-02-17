@@ -1,28 +1,19 @@
 package se.kth.csc.iprog.dinnerplanner.model;
 
 import java.util.HashSet;
+import java.util.Observable;
 import java.util.Set;
 
-public class DinnerModel implements IDinnerModel {
-
+public class DinnerModel extends Observable implements IDinnerModel {
 
   Set<Dish> dishes = new HashSet<Dish>();
   private int nrOfGuests;
   Set<Dish> selectedDishes = new HashSet<Dish>();
-  /**
-   * TODO: For Lab2 you need to implement the IDinnerModel interface.
-   * When you do this you will have all the needed fields and methods
-   * for the dinner planner (number of guests, selected dishes, etc.).
-   */
 
-
-  /**
-   * The constructor of the overall model. Set the default values here
-   */
   public DinnerModel() {
 
     //Adding some example data, you can add more
-    Dish dish1 = new Dish("French toast", Dish.STARTER, "toast.jpg", "In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
+    Dish dish1 = new Dish("French toast123", Dish.STARTER, "toast.jpg", "In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
     Ingredient dish1ing1 = new Ingredient("eggs", 0.5, "", 1);
     Ingredient dish1ing2 = new Ingredient("milk", 30, "ml", 6);
     Ingredient dish1ing3 = new Ingredient("brown sugar", 7, "g", 1);

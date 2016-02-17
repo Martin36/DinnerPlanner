@@ -57,6 +57,7 @@
         android:id="@+id/starters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         layout="@layout/course_images_layout" />
     <!--
     android:adjustViewBounds="true"
@@ -76,6 +77,7 @@
         android:id="@+id/main_courses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         layout="@layout/course_images_layout" />
 
     <TextView
@@ -91,6 +93,7 @@
         android:id="@+id/desserts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         layout="@layout/course_images_layout" />
 
     <RelativeLayout

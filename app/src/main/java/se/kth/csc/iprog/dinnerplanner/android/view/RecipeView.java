@@ -24,7 +24,7 @@ public class RecipeView{
     this.model = model;
     //Find the text view containing the total cost
     TextView cost = (TextView) view.findViewById(R.id.cost);
-    cost.setText("" + model.getTotalMenuPrice());
+    cost.setText("Total Cost: " + model.getTotalMenuPrice() + "kr");
     //Set the dish images and names
     ImageButton imageButton = null;
     TextView textView = null;
