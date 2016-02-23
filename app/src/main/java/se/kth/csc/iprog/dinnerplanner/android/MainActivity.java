@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-import se.kth.csc.iprog.dinnerplanner.android.view.ChooseMenu;
+import se.kth.csc.iprog.dinnerplanner.android.view.ChooseMenuView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 
 /**
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 
     View view = findViewById(R.id.choose_menu);
 //    View view = findViewById(R.id.recipe_view);
-    ChooseMenu chooseMenu = new ChooseMenu(view, model);
+    ChooseMenuView chooseMenu = new ChooseMenuView(view, model);
 //    RecipeView recipeView = new RecipeView(view, model);
     //Sets the title bar
     this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_bar);

@@ -9,9 +9,11 @@ public class DinnerModel extends Observable implements IDinnerModel {
   Set<Dish> dishes = new HashSet<Dish>();
   private int nrOfGuests;
   Set<Dish> selectedDishes = new HashSet<Dish>();
+  String description;
+  String descriptionTitle;
 
   public DinnerModel() {
-
+    description = "";
     //Adding some example data, you can add more
     Dish dish1 = new Dish("French toast123", Dish.STARTER, "toast.jpg", "In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
     Ingredient dish1ing1 = new Ingredient("eggs", 0.5, "", 1);
@@ -149,4 +151,23 @@ public class DinnerModel extends Observable implements IDinnerModel {
       if(d == dish) dishes.remove(d);
     }
   }
+  public void setDescription(String s){
+    this.description = s;
+    notifyView();
+  }
+  public String getDescription(){
+    return this.description;
+  }
+  public void setDescriptionTitle(String s){
+    this.descriptionTitle = s;
+    notifyView();
+  }
+  public String getDescriptionTitle(){
+    return this.descriptionTitle;
+  }
+  private void notifyView(){
+    setChanged();
+    notifyObservers();
+  }
+
 }

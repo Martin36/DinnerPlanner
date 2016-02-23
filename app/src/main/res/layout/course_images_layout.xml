@@ -1,110 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="horizontal"
+</LinearLayout>
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+    >
+
+<RelativeLayout
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="90dp"
+    android:layout_weight="1"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/button1"
+        android:background="@color/Gray"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="4"
-        android:paddingLeft="10dp"
-        >
+        android:text="Course1"
+        android:id="@+id/name1"
+        android:layout_below="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:gravity="center"
+        android:layout_alignEnd="@+id/button1"/>
 
-        <RelativeLayout
-            android:paddingLeft="10dp"
-            android:layout_width="90dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/button1"
-                android:background="@color/Gray"/>
+</RelativeLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course1"
-                android:id="@+id/name1"
-                android:layout_below="@+id/button1"
-                android:layout_alignRight="@+id/button1"
-                android:gravity="center"
-                android:layout_alignEnd="@+id/button1"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:paddingLeft="10dp"
-            android:layout_width="90dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/button2"
-                android:background="@color/Gray"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course2"
-                android:id="@+id/name2"
-                android:layout_below="@+id/button2"
-                android:layout_alignRight="@+id/button2"
-                android:gravity="center"
-                android:layout_alignEnd="@+id/button2"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:paddingLeft="10dp"
-            android:layout_width="90dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/button3"
-                android:background="@color/Gray"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course3"
-                android:id="@+id/name3"
-                android:layout_below="@+id/button3"
-                android:layout_alignRight="@+id/button3"
-                android:gravity="center"
-                android:layout_alignEnd="@+id/button3"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:paddingLeft="10dp"
-            android:layout_width="90dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/button4"
-                android:background="@color/Gray"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course4"
-                android:id="@+id/name4"
-                android:layout_below="@+id/button4"
-                android:layout_alignRight="@+id/button4"
-                android:gravity="center"
-                android:layout_alignEnd="@+id/button4"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
 
 </LinearLayout>

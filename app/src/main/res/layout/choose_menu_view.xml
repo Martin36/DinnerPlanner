@@ -53,12 +53,12 @@
         android:textStyle="bold"
         android:paddingLeft="10dp"/>
 
-    <include
+    <HorizontalScrollView
         android:id="@+id/starters"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        layout="@layout/course_images_layout" />
+        android:layout_height="wrap_content">
+
+    </HorizontalScrollView>
     <!--
     android:adjustViewBounds="true"
     android:src="@drawable/bakedbrie"
@@ -73,12 +73,12 @@
         android:textStyle="bold"
         android:paddingLeft="10dp"/>
 
-    <include
+    <HorizontalScrollView
         android:id="@+id/main_courses"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        layout="@layout/course_images_layout" />
+        android:layout_height="wrap_content">
+
+    </HorizontalScrollView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,12 +89,12 @@
         android:textStyle="bold"
         android:paddingLeft="10dp"/>
 
-    <include
+    <HorizontalScrollView
         android:id="@+id/desserts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        layout="@layout/course_images_layout" />
+        android:layout_height="wrap_content">
+
+    </HorizontalScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"

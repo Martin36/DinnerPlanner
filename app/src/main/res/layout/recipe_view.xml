@@ -43,8 +43,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="0.11">
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -160,12 +159,23 @@
         </RelativeLayout>
 
     </LinearLayout>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
-        android:id="@+id/description"
-        android:layout_weight="0.55"/>
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:id="@+id/description_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/description"/>
+
+    </ScrollView>
 
 </LinearLayout>
