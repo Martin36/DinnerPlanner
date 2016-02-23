@@ -32,13 +32,16 @@ public class ChooseMenuView implements Observer{
 
   DinnerModel model;
   View view;
-  ArrayList<ImageButton> buttons; //TODO: Create list of buttons.
+  public final ArrayList<ImageButton> buttons; //TODO: Create list of buttons.
+  public final ArrayList<String> dishNames;
   LinearLayout starterRow, mainCourseRow, dessertRow;
 
 
   public ChooseMenuView(View view, DinnerModel model){
     this.view = view;
     this.model = model;
+    buttons = new ArrayList<ImageButton>();
+    dishNames = new ArrayList<String>();
     //Code to create the dropdown for choosing nr of guests
     Spinner nrGuests = (Spinner)view.findViewById(R.id.spinner);
     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(), R.array.participants,
@@ -51,66 +54,51 @@ public class ChooseMenuView implements Observer{
     LayoutInflater inflater = (LayoutInflater)view.getContext().getSystemService
         (Context.LAYOUT_INFLATER_SERVICE);
     HorizontalScrollView currentRowOfDishType = null;
-    int buttonCounter;
-
     for(int i = 1; i <= 3; i++) {
       switch (i) {
         case 1:
           currentRowOfDishType = (HorizontalScrollView) view.findViewById(R.id.starters);
-          starterRow = new LinearLayout(view.getContext());
           break;
         case 2:
           currentRowOfDishType = (HorizontalScrollView) view.findViewById(R.id.main_courses);
-          mainCourseRow = new LinearLayout(view.getContext());
           break;
         case 3:
           currentRowOfDishType = (HorizontalScrollView) view.findViewById(R.id.desserts);
-          dessertRow = new LinearLayout(view.getContext());
           break;
         default:
           break;
       }
-      //Inflate the button into the scroll view
- //     View buttonInfo = inflater.inflate(R.layout.course_images_layout, currentRowOfDishType, false);
- //     currentRowOfDishType.addView(buttonInfo);
-      buttonCounter = 1;
       Set<Dish> dishes = model.getDishesOfType(i);    //Since i = "the dish type" we can use it here
       LinearLayout tempLayout = new LinearLayout(view.getContext());
+      tempLayout.setOrientation(LinearLayout.HORIZONTAL);
+
       if(!dishes.isEmpty()) {   //We don't want to add the dish type if there is non of it or it doesn't fit
         //Need to extract iterator to be able to excess elements in set
         for (Iterator<Dish> it = dishes.iterator(); it.hasNext(); ) {
           //The current dish
           Dish d = it.next();
-          View buttonInfo = inflater.inflate(R.layout.course_images_layout, currentRowOfDishType, false);
-          currentRowOfDishType.addView(buttonInfo);
-          //TODO: Add things to linear layout
-
-          //The "number" of the current button
-          String buttonID = "button" + buttonCounter;
-          //Get button id
-          int buttonResID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", ChooseMenuActivity.PACKAGE_NAME);
-          ImageButton imageButton = (ImageButton) currentRowOfDishType.findViewById(buttonResID);
-
+          //Inflate the button into a linear layout
+          View dishFrame = inflater.inflate(R.layout.course_images_layout, currentRowOfDishType, false);
+          ImageButton imageButton = (ImageButton) dishFrame.findViewById(R.id.button);
+          buttons.add(imageButton);   //Add button to list to be able to keep track
+          dishNames.add(d.getName());
           String im = d.getImage();
-          //Need to remove the ".jpg" from image name
-          im = im.replace(".jpg", "");
-
+          im = im.replace(".jpg", "");    //Need to remove the ".jpg" from image name
           //The ID for the drawable picture
           int imageID = view.getResources().getIdentifier(im, "drawable", ChooseMenuActivity.PACKAGE_NAME);
           //Add images to buttons
           imageButton.setImageResource(imageID);
 
           //Set the name of the dish
-
-          //The id for the current buttons text view
-          String textViewID = "name" + buttonCounter;
-          //Convert to valid id
-          int textResID = currentRowOfDishType.getResources().getIdentifier(textViewID, "id", ChooseMenuActivity.PACKAGE_NAME);
           //Retrieves the current text view where the name of the dish is put
-          TextView textView = (TextView) currentRowOfDishType.findViewById(textResID);
+          TextView textView = (TextView) dishFrame.findViewById(R.id.name);
           textView.setText(d.getName());
-        }
+
+          //Add things to linear layout
+          tempLayout.addView(dishFrame);
+       }
       }
+      currentRowOfDishType.addView(tempLayout);
       switch (i) {
         case 1:
           starterRow = tempLayout;
