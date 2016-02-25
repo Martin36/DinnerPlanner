@@ -1,6 +1,8 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.View;
 
 import java.text.DecimalFormat;
@@ -8,6 +10,8 @@ import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.Set;
 
+import se.kth.csc.iprog.dinnerplanner.android.ChooseMenuActivity;
+import se.kth.csc.iprog.dinnerplanner.android.RecipeActivity;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
@@ -23,6 +27,7 @@ public class RecipeViewController implements View.OnClickListener {
     this.view.starterButton.setOnClickListener(this);
     this.view.mainCourseButton.setOnClickListener(this);
     this.view.dessertButton.setOnClickListener(this);
+    this.view.backButton.setOnClickListener(this);
 
   }
   @Override
@@ -54,13 +59,18 @@ public class RecipeViewController implements View.OnClickListener {
       model.setIngredientAmount("");
     }
     if(view == this.view.dessertButton) {
+      System.out.println("DESSERT!");
       model.setDescription(model.getSelectedDish(Dish.DESERT).getDescription());
       model.setDescriptionTitle("Dessert");
       model.setIngredientAmount("");
     }
     if(view == this.view.backButton){
+      System.out.println("BACK!");
+      Intent intent = new Intent();
+      intent.setClass(view.getContext(), ChooseMenuActivity.class);
+      view.getContext().startActivity(intent);
+
       //TODO: Change to previous screen by switching activity.
     }
-
   }
 }

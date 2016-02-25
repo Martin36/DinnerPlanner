@@ -18,9 +18,11 @@ public class RecipeActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_recipe);
     PACKAGE_NAME = getApplicationContext().getPackageName();
+
     model = ((DinnerPlannerApplication) this.getApplication()).getModel();
     view = new RecipeView(findViewById(R.id.recipe_view), model);
     controller = new RecipeViewController(model, view);
+
 
   }
 
