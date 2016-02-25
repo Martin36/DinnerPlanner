@@ -72,7 +72,6 @@
             android:background="@color/Red"
             android:textColor="@color/White"
             android:paddingLeft="30dp"
-            android:onClick="createMenu"
             android:paddingRight="30dp"/>
     </RelativeLayout>
 </LinearLayout>

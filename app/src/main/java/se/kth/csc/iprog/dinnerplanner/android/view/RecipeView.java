@@ -29,7 +29,6 @@ public class RecipeView implements Observer{
     this.view = view;
     this.model = model;
     model.addObserver(this);    //Notify the model that this class now observes it.
-  //  buttons = new ArrayList<ImageButton>();
     ingredientsButton = (ImageButton) view.findViewById(R.id.ingredient_button);
     starterButton = (ImageButton) view.findViewById(R.id.starter_button);
     mainCourseButton = (ImageButton) view.findViewById(R.id.main_course_button);

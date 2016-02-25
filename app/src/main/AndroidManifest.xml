@@ -20,17 +20,15 @@
         <activity
             android:name=".ChooseMenuActivity"
             android:label="@string/title_activity_choose_menu">
-
-
-        </activity>
-        <activity
-            android:name=".RecipeActivity"
-            android:label="@string/title_activity_recipe">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecipeActivity"
+            android:label="@string/title_activity_recipe">
         </activity>
     </application>
 

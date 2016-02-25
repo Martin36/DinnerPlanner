@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -35,15 +36,18 @@ public class ChooseMenuView implements Observer{
   public final ArrayList<ImageButton> buttons; //TODO: Create list of buttons.
   public final ArrayList<String> dishNames;
   LinearLayout starterRow, mainCourseRow, dessertRow;
-
+  Button createButton;
+  Spinner nrGuests;
 
   public ChooseMenuView(View view, DinnerModel model){
     this.view = view;
     this.model = model;
+    model.addObserver(this);
     buttons = new ArrayList<ImageButton>();
     dishNames = new ArrayList<String>();
+    createButton = (Button) view.findViewById(R.id.create_menu_button);
     //Code to create the dropdown for choosing nr of guests
-    Spinner nrGuests = (Spinner)view.findViewById(R.id.spinner);
+    nrGuests = (Spinner)view.findViewById(R.id.spinner);
     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(), R.array.participants,
         android.R.layout.simple_spinner_dropdown_item);
     //Specify the layout to use when the list of choices appears
@@ -112,68 +116,23 @@ public class ChooseMenuView implements Observer{
         default:
           break;
       }
-
     }
-
-    /*
-    //Counter for the button ID
-    int buttonCounter;
-    //The row to put the dishes on
-    //Set the right images to the buttons
-    for(int i = 1; i <= 3; i++){
-      switch (i){
-        case 1:
-          currentRowOfDishType = (LinearLayout) view.findViewById(R.id.starters);
-          break;
-        case 2:
-          currentRowOfDishType = (LinearLayout) view.findViewById(R.id.main_courses);
-          break;
-        case 3:
-          currentRowOfDishType = (LinearLayout) view.findViewById(R.id.desserts);
-          break;
-        default:
-          break;
-      }
-
-      buttonCounter = 1;
-      Set<Dish> dishes = model.getDishesOfType(i);    //Since i = "the dish type" we can use it here
-      if(!dishes.isEmpty() && dishes.size() <= 4) {   //We don't want to add the dish type if there is non of it or it doesn't fit
-        //Need to extract iterator to be able to excess elements in set
-        for (Iterator<Dish> it = dishes.iterator(); it.hasNext(); ) {
-          //The current dish
-          Dish d = it.next();
-          //The "number" of the current button
-          String buttonID = "button" + buttonCounter;
-          //Get button id
-          int buttonResID = currentRowOfDishType.getResources().getIdentifier(buttonID, "id", ChooseMenuActivity.PACKAGE_NAME);
-          ImageButton imageButton = (ImageButton) currentRowOfDishType.findViewById(buttonResID);
-
-          String im = d.getImage();
-          //Need to remove the ".jpg" from image name
-          im = im.replace(".jpg", "");
-
-          //The ID for the drawable picture
-          int imageID = view.getResources().getIdentifier(im, "drawable", ChooseMenuActivity.PACKAGE_NAME);
-          //Add images to buttons
-          imageButton.setImageResource(imageID);
-
-          //Set the name of the dish
-
-          //The id for the current buttons text view
-          String textViewID = "name" + buttonCounter;
-          //Convert to valid id
-          int textResID = currentRowOfDishType.getResources().getIdentifier(textViewID, "id", ChooseMenuActivity.PACKAGE_NAME);
-          //Retrieves the current text view where the name of the dish is put
-          TextView textView = (TextView) currentRowOfDishType.findViewById(textResID);
-          textView.setText(d.getName());
-        }
-      }
-    }
-    */
   }
 
   @Override
   public void update(Observable observable, Object o) {
-
+    if(o.toString().equalsIgnoreCase("Number of Guests Changed")){
+      nrGuests.setSelection(model.getNumberOfGuests()-1);
+    }
+    if(o.toString().equalsIgnoreCase("Dish Added To Menu")){
+      for (ImageButton imageButton : this.buttons){
+        imageButton.setAlpha(1f);
+      }
+      for (Dish d : model.getFullMenu()){
+        int index = this.dishNames.indexOf(d.getName());
+        this.buttons.get(index).setAlpha(0.5f);
+      }
+    }
+   // if()
   }
 }

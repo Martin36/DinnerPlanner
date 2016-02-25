@@ -61,6 +61,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
   @Override
   public void setNumberOfGuests(int numberOfGuests) {
     this.nrOfGuests = numberOfGuests < 0 ? Math.abs(numberOfGuests) : numberOfGuests;
+    notifyView("Number of Guests Changed");
   }
 
   @Override
@@ -99,25 +100,30 @@ public class DinnerModel extends Observable implements IDinnerModel {
 
   @Override
   public void addDishToMenu(Dish dish) {
-    for (Iterator<Dish> it = dishes.iterator(); it.hasNext(); ) {
-      Dish d = it.next();
+    Dish d = null;
+    boolean containsDishType = false;
+    for (Iterator<Dish> it = selectedDishes.iterator(); it.hasNext(); ) {
+      d = it.next();
       if (d.getType() == dish.getType()) {
-        it.remove();
-      }
+        containsDishType = true;
+        break;
+        }
     }
-    dishes.add(dish);
+    if(containsDishType) selectedDishes.remove(d);
+    selectedDishes.add(dish);
+    notifyView("Dish Added To Menu");
   }
 
   @Override
   public void removeDishFromMenu(Dish dish) {
-    for (Dish d : dishes) {
-      if (d == dish) dishes.remove(d);
+    for (Dish d : selectedDishes) {
+      if (d == dish) selectedDishes.remove(d);
     }
   }
 
   public void setIngredientAmount(String s) {
     this.ingredientAmount = s;
-    notifyView();
+    notifyView("Ingredient Amount Changed");
   }
 
   public String getIngredientAmount() {
@@ -126,7 +132,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
 
   public void setDescription(String s) {
     this.description = s;
-    notifyView();
+    notifyView("Description Changed");
   }
 
   public String getDescription() {
@@ -135,16 +141,16 @@ public class DinnerModel extends Observable implements IDinnerModel {
 
   public void setDescriptionTitle(String s) {
     this.descriptionTitle = s;
-    notifyView();
+    notifyView("Description Title Changed");
   }
 
   public String getDescriptionTitle() {
     return this.descriptionTitle;
   }
 
-  private void notifyView() {
+  private void notifyView(String hasChanged) {
     setChanged();
-    notifyObservers();
+    notifyObservers(hasChanged);
   }
 
   /**
@@ -164,7 +170,6 @@ public class DinnerModel extends Observable implements IDinnerModel {
     dish1.addIngredient(dish1ing4);
     dish1.addIngredient(dish1ing5);
     dishes.add(dish1);
-    selectedDishes.add(dish1);
 
 
     Dish dish2 = new Dish("Meat balls", Dish.MAIN, "meatballs.jpg", "Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.");
@@ -191,7 +196,6 @@ public class DinnerModel extends Observable implements IDinnerModel {
     dish2.addIngredient(dish2ing10);
     dish2.addIngredient(dish2ing11);
     dishes.add(dish2);
-    selectedDishes.add(dish2);
 
     Dish dish3 = new Dish("Fish cake", Dish.STARTER, "fishcake.jpg", "In a large mixing bowl, beat the eggs. Add the fish, mix well. Make small cakes of the fish mixture and roll them in breadcrumbs. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides. Serve with a slice of tomato, lemon and some spinach");
     Ingredient dish3ing1 = new Ingredient("eggs", 1, "", 2);
@@ -214,7 +218,6 @@ public class DinnerModel extends Observable implements IDinnerModel {
     dish4.addIngredient(dish4ing1);
     dish4.addIngredient(dish4ing2);
     dishes.add(dish4);
-    selectedDishes.add(dish4);
 
     Dish dish5 = new Dish("Bread á la carte", Dish.STARTER, "breadtomato.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish5ing1 = new Ingredient("loaf of bread", 1, "", 15);
@@ -224,7 +227,6 @@ public class DinnerModel extends Observable implements IDinnerModel {
     dish4.addIngredient(dish5ing2);
     dish4.addIngredient(dish5ing3);
     dishes.add(dish5);
-    selectedDishes.add(dish5);
 
     Dish dish6 = new Dish("Pasties", Dish.STARTER, "pasties.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish6ing1 = new Ingredient("loaf of bread", 1, "", 15);

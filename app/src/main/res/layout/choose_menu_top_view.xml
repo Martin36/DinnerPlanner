@@ -9,29 +9,32 @@
         android:layout_width="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight=".01"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingStart="10dp"
             android:paddingRight="10dp"
             android:text="Participants"
             android:id="@+id/participants"
-            android:textSize="25sp"/>
+            android:textSize="20sp"/>
 
         <Spinner
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:layout_height="wrap_content"
             android:id="@+id/spinner"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight=".01"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingStart="10dp"
             android:paddingRight="10dp"
-            android:text="Total Cost: 100 kr"
+            android:text="Total Cost: 1000 kr"
             android:id="@+id/total_cost"
-            android:textSize="25sp"/>
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
