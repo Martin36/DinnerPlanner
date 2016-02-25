@@ -19,6 +19,7 @@ public class ChooseMenuViewController implements View.OnClickListener {
     for(ImageButton imageButton: this.view.buttons){
       imageButton.setOnClickListener(this);
     }
+
   }
 
 
@@ -36,6 +37,5 @@ public class ChooseMenuViewController implements View.OnClickListener {
       }
     }
     model.addDishToMenu(d);
-
   }
 }

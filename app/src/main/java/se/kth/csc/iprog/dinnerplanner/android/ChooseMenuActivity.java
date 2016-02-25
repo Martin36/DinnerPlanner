@@ -1,5 +1,6 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -23,6 +24,10 @@ public class ChooseMenuActivity extends Activity {
     PACKAGE_NAME = getApplicationContext().getPackageName();
     view = new ChooseMenuView(findViewById(R.id.choose_menu_activity), model);
     controller = new ChooseMenuViewController(model, view);
+  }
+  public void createMenu(View view){
+    Intent intent = new Intent(this, RecipeActivity.class);
+    startActivity(intent);
   }
 
 }
