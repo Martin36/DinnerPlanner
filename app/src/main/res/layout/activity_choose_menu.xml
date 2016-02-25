@@ -6,23 +6,25 @@
     android:layout_height="match_parent"
     android:id="@+id/choose_menu_activity"
     tools:context="se.kth.csc.iprog.dinnerplanner.android.ChooseMenuActivity">
-    <include layout="@layout/title_bar"
-             android:layout_alignParentTop="true"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:layout_height="wrap_content"
-             android:layout_width="match_parent"
-             android:id="@+id/include"/>
 
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="55dp">
-        <include layout="@layout/choose_menu_view"
+        android:layout_height="wrap_content">
+        <include layout="@layout/title_bar"/>
+        <include layout="@layout/choose_menu_top_view"/>
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-                 android:layout_below="@+id/include"
-                 android:layout_alignParentLeft="true"
-                 android:layout_alignParentStart="true"/>
-    </ScrollView>
+            android:layout_height="match_parent">
+            <include layout="@layout/choose_menu_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/include"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+        </ScrollView>
+
+    </LinearLayout>
+
 </RelativeLayout>

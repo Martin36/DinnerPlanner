@@ -265,7 +265,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
       dish4.addIngredient(dish11ing3);
       dishes.add(dish11);
 
-      Dish dish12 = new Dish("Broccoli pie", Dish.DESERT, "broccolipie.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
+      Dish dish12 = new Dish("Chocolate cake", Dish.DESERT, "chocolatecake.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
       Ingredient dish12ing1 = new Ingredient("loaf of bread", 1, "", 15);
       Ingredient dish12ing2 = new Ingredient("tam", 4, "slices", 20);
       Ingredient dish12ing3 = new Ingredient("tomato", 2, "", 12);
@@ -274,7 +274,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
       dish4.addIngredient(dish12ing3);
       dishes.add(dish12);
 
-      Dish dish13 = new Dish("Broccoli pie", Dish.DESERT, "broccolipie.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
+      Dish dish13 = new Dish("Red cake", Dish.DESERT, "redcake.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
       Ingredient dish13ing1 = new Ingredient("loaf of bread", 1, "", 15);
       Ingredient dish13ing2 = new Ingredient("tam", 4, "slices", 20);
       Ingredient dish13ing3 = new Ingredient("tomato", 2, "", 12);
@@ -283,7 +283,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
       dish4.addIngredient(dish13ing3);
       dishes.add(dish13);
 
-      Dish dish14 = new Dish("Broccoli pie", Dish.DESERT, "broccolipie.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
+      Dish dish14 = new Dish("Fruit sticks", Dish.DESERT, "fruitsticks.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
       Ingredient dish14ing1 = new Ingredient("loaf of bread", 1, "", 15);
       Ingredient dish14ing2 = new Ingredient("tam", 4, "slices", 20);
       Ingredient dish14ing3 = new Ingredient("tomato", 2, "", 12);
@@ -292,7 +292,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
       dish4.addIngredient(dish14ing3);
       dishes.add(dish14);
 
-      Dish dish15 = new Dish("Broccoli pie", Dish.DESERT, "broccolipie.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
+      Dish dish15 = new Dish("Caramel apples", Dish.DESERT, "caramelapples.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
       Ingredient dish15ing1 = new Ingredient("loaf of bread", 1, "", 15);
       Ingredient dish15ing2 = new Ingredient("tam", 4, "slices", 20);
       Ingredient dish15ing3 = new Ingredient("tomato", 2, "", 12);
