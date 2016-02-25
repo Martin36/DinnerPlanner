@@ -11,6 +11,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
     Set<Dish> dishes = new HashSet<Dish>();
   Set<Dish> selectedDishes = new HashSet<Dish>();
   String description;
+    String ingredientAmount;
   String descriptionTitle;
 
   public DinnerModel() {
@@ -113,6 +114,12 @@ public class DinnerModel extends Observable implements IDinnerModel {
       if(d == dish) dishes.remove(d);
     }
   }
+    public void setIngredientAmount(String s){
+        this.ingredientAmount = s;
+        notifyView();
+    }
+    public String getIngredientAmount() {return this.ingredientAmount; }
+
   public void setDescription(String s){
     this.description = s;
     notifyView();

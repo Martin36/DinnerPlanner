@@ -7,6 +7,7 @@
         android:orientation="horizontal"
         android:layout_height="match_parent"
         android:layout_width="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,22 +19,21 @@
             android:textSize="25sp"/>
 
         <Spinner
-            android:layout_width="37dp"
-            android:layout_height="40dp"
-            android:id="@+id/spinner"
-            />
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spinner"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="Total Cost: 100 kr"
+            android:id="@+id/total_cost"
+            android:textSize="25sp"/>
 
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        android:text="Total Cost: 100 kr"
-        android:id="@+id/total_cost"
-        android:textSize="25sp"/>
 
     <TextView
         android:layout_width="wrap_content"

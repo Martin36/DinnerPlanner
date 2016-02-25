@@ -12,14 +12,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="se.kth.csc.iprog.dinnerplanner.android.view.RecipeView">
 
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Back"
             android:id="@+id/back_button"
@@ -27,16 +26,17 @@
             android:textColor="@color/White"
             android:height="40dp"
             android:width="100dp"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:layout_weight="1"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Total Cost: 0kr"
             android:id="@+id/cost"
             android:textSize="25dp"
-            android:layout_weight="1"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="10dp"
+            android:layout_weight="3"/>
 
     </LinearLayout>
 
@@ -170,11 +170,24 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/description"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/amount"/>
+
+        </LinearLayout>
 
     </ScrollView>
 

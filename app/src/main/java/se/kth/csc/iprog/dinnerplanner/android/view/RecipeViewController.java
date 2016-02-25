@@ -3,6 +3,8 @@ package se.kth.csc.iprog.dinnerplanner.android.view;
 
 import android.view.View;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -27,29 +29,34 @@ public class RecipeViewController implements View.OnClickListener {
   public void onClick(View view) {
     if(view == this.view.ingredientsButton){
       Set<Ingredient> ingredients = model.getAllIngredients();
-      StringBuilder stringBuilder = new StringBuilder();
+      StringBuilder ingredient = new StringBuilder();
+      StringBuilder ingAmount = new StringBuilder();
+      NumberFormat nf = new DecimalFormat("##.##");
 
       for(Iterator<Ingredient> it = ingredients.iterator(); it.hasNext();){
         Ingredient i = it.next();
-        stringBuilder.append(i.getName() + "\t");
-        stringBuilder.append(i.getQuantity());
-        stringBuilder.append(i.getUnit() + "\n");
+        ingredient.append(i.getName() + "\n");
+        ingAmount.append(nf.format(i.getQuantity()));
+        ingAmount.append(i.getUnit() + "\n");
       }
-      model.setDescription(stringBuilder.toString());
+      model.setDescription(ingredient.toString());
+      model.setIngredientAmount(ingAmount.toString());
       model.setDescriptionTitle("Ingredients");
     }
     if(view == this.view.starterButton){
       model.setDescription(model.getSelectedDish(Dish.STARTER).getDescription());
       model.setDescriptionTitle("Starter");
+      model.setIngredientAmount("");
     }
     if(view == this.view.mainCourseButton){
       model.setDescription(model.getSelectedDish(Dish.MAIN).getDescription());
       model.setDescriptionTitle("Main Course");
-
+      model.setIngredientAmount("");
     }
-    if(view == this.view.dessertButton){
+    if(view == this.view.dessertButton) {
       model.setDescription(model.getSelectedDish(Dish.DESERT).getDescription());
       model.setDescriptionTitle("Dessert");
+      model.setIngredientAmount("");
     }
     if(view == this.view.backButton){
       //TODO: Change to previous screen by switching activity.

@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -39,9 +41,12 @@ public class RecipeView implements Observer{
   @Override
   public void update(Observable observable, Object o) {
     TextView cost = (TextView) view.findViewById(R.id.cost);
-    cost.setText("Total Cost: " + model.getTotalMenuPrice() + "kr");
+    NumberFormat nf = new DecimalFormat("##.##");
+    cost.setText("Total Cost: " + nf.format(model.getTotalMenuPrice()) + "kr");
     TextView description = (TextView) view.findViewById(R.id.description);
     description.setText(model.getDescription());
+    TextView ingAmount = (TextView) view.findViewById(R.id.amount);
+    ingAmount.setText(model.getIngredientAmount());
     TextView descriptionTitle = (TextView) view.findViewById(R.id.description_title);
     descriptionTitle.setText(model.getDescriptionTitle());
     //Set the dish images and names
