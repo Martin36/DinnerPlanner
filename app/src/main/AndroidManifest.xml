@@ -21,6 +21,7 @@
             android:name=".ChooseMenuActivity"
             android:label="@string/title_activity_choose_menu">
 
+
         </activity>
         <activity
             android:name=".RecipeActivity"
