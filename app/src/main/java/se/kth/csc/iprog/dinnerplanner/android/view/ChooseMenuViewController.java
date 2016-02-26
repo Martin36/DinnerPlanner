@@ -7,13 +7,17 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import java.util.Iterator;
 import java.util.Set;
 
+import se.kth.csc.iprog.dinnerplanner.android.ChooseMenuActivity;
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.android.RecipeActivity;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
@@ -47,7 +51,6 @@ public class ChooseMenuViewController implements View.OnClickListener {
     });
   }
 
-
   @Override
   public void onClick(View view) {
     if(view == this.view.createButton){
@@ -55,12 +58,12 @@ public class ChooseMenuViewController implements View.OnClickListener {
       intent.setClass(view.getContext(), RecipeActivity.class);
       view.getContext().startActivity(intent);
     }
+
     else {
       int index = this.view.buttons.indexOf(view);
       Set<Dish> dishes = model.getDishes();
-      Dish d = null;
       for (Iterator<Dish> it = dishes.iterator(); it.hasNext(); ) {
-        d = it.next();
+        final Dish d = it.next(); // Can access it from inner class
         if (d.getName() == this.view.dishNames.get(index)) {
           //Inflate the popup
           LinearLayout viewGroup = (LinearLayout) view.findViewById(R.id.popup);
@@ -68,22 +71,56 @@ public class ChooseMenuViewController implements View.OnClickListener {
               .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
           View layout = layoutInflater.inflate(R.layout.popup_layout, viewGroup);
 
+          // Set the layout to current dish
+          ImageView v = (ImageView)layout.findViewById(R.id.image_view_popup);
+          String im = d.getImage();
+          im = im.replace(".jpg", "");    //Need to remove the ".jpg" from image name
+          //The ID for the drawable picture
+          int imageID = view.getResources().getIdentifier(im, "drawable", ChooseMenuActivity.PACKAGE_NAME);
+          //Add images to buttons
+          v.setImageResource(imageID);
+
+          TextView courseName = (TextView) layout.findViewById(R.id.course_name_popup);
+          courseName.setText(d.getName());
+
+          TextView coursePrice = (TextView) layout.findViewById(R.id.course_price_popup);
+          double costString = model.getNumberOfGuests() * d.getCost();
+          coursePrice.setText("Total Cost: "+costString + "\n" + "Cost/Person: " + d.getCost());
+
           //Create the popup
-          PopupWindow popup = new PopupWindow(view);
+          final PopupWindow popup = new PopupWindow(view);
           popup.setContentView(layout);
           popup.setWidth(1100);
           popup.setHeight(1500);
           popup.setFocusable(true);
 
-
           //Displaying the popup at specified location
           popup.showAtLocation(layout, Gravity.CENTER,0,0);
-          //The set cannot be modified while using the iterator
+
+          ((Button) layout.findViewById(R.id.popup_choose_button))
+                  .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                      model.addDishToMenu(d);
+                      popup.dismiss();
+                    }
+                  });
+
+          ((Button) layout.findViewById(R.id.popup_close_button))
+                  .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                      popup.dismiss();
+                    }
+                  });
+
+          //Cannot be modified while using the iterator
           //So the dish needs to be added outside the iteration
           break;
         }
       }
-      model.addDishToMenu(d);
+      // if you choose the dish in the popup
+      }
     }
   }
-}
+

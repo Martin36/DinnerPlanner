@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:id="@+id/popup"
-              android:background="@color/Gray"
+              android:background="@color/White"
               android:weightSum="1">
 
     <RelativeLayout
@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView"
+            android:id="@+id/course_name_popup"
             android:gravity="center"
             android:textSize="30sp"
             android:paddingTop="20dp"/>
@@ -32,18 +32,18 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="243dp"
-            android:id="@+id/imageView"
+            android:id="@+id/image_view_popup"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.63"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView2"
+            android:id="@+id/course_price_popup"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.44"
-            android:textSize="30sp"/>
+            android:textSize="10sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -58,7 +58,7 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="CLOSE"
-            android:id="@+id/button2"
+            android:id="@+id/popup_close_button"
             android:layout_weight="0.38"
             android:layout_marginLeft="20dp"
             android:textColor="@color/White"
@@ -69,7 +69,7 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="CHOOSE"
-            android:id="@+id/button3"
+            android:id="@+id/popup_choose_button"
             android:layout_weight="0.48"
             android:layout_marginLeft="40dp"
             android:textSize="25sp"

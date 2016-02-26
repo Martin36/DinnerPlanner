@@ -39,6 +39,8 @@ public class ChooseMenuView implements Observer{
   Button createButton;
   Spinner nrGuests;
 
+  Button chooseInPopupButton;
+
   public ChooseMenuView(View view, DinnerModel model){
     this.view = view;
     this.model = model;
@@ -117,6 +119,7 @@ public class ChooseMenuView implements Observer{
           break;
       }
     }
+    update(model,"Dish Added To Menu");
   }
 
   @Override

@@ -223,100 +223,99 @@ public class DinnerModel extends Observable implements IDinnerModel {
     Ingredient dish5ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish5ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish5ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish5ing1);
-    dish4.addIngredient(dish5ing2);
-    dish4.addIngredient(dish5ing3);
+    dish5.addIngredient(dish5ing1);
+    dish5.addIngredient(dish5ing2);
+    dish5.addIngredient(dish5ing3);
     dishes.add(dish5);
 
     Dish dish6 = new Dish("Pasties", Dish.STARTER, "pasties.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish6ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish6ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish6ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish6ing1);
-    dish4.addIngredient(dish6ing2);
-    dish4.addIngredient(dish6ing3);
+    dish6.addIngredient(dish6ing1);
+    dish6.addIngredient(dish6ing2);
+    dish6.addIngredient(dish6ing3);
     dishes.add(dish6);
 
     Dish dish7 = new Dish("Mushroom stew", Dish.STARTER, "mushroomstarter.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish7ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish7ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish7ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish7ing1);
-    dish4.addIngredient(dish7ing2);
-    dish4.addIngredient(dish7ing3);
+    dish7.addIngredient(dish7ing1);
+    dish7.addIngredient(dish7ing2);
+    dish7.addIngredient(dish7ing3);
     dishes.add(dish7);
 
     Dish dish8 = new Dish("Fried shrimp", Dish.MAIN, "friedshrimp.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish8ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish8ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish8ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish8ing1);
-    dish4.addIngredient(dish8ing2);
-    dish4.addIngredient(dish8ing3);
+    dish8.addIngredient(dish8ing1);
+    dish8.addIngredient(dish8ing2);
+    dish8.addIngredient(dish8ing3);
     dishes.add(dish8);
 
     Dish dish9 = new Dish("Roasted chicken", Dish.MAIN, "roastedchicken.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish9ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish9ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish9ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish9ing1);
-    dish4.addIngredient(dish9ing2);
-    dish4.addIngredient(dish9ing3);
+    dish9.addIngredient(dish9ing1);
+    dish9.addIngredient(dish9ing2);
+    dish9.addIngredient(dish9ing3);
     dishes.add(dish9);
 
     Dish dish10 = new Dish("Stew", Dish.MAIN, "stew.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish10ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish10ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish10ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish10ing1);
-    dish4.addIngredient(dish10ing2);
-    dish4.addIngredient(dish10ing3);
+    dish10.addIngredient(dish10ing1);
+    dish10.addIngredient(dish10ing2);
+    dish10.addIngredient(dish10ing3);
     dishes.add(dish10);
 
     Dish dish11 = new Dish("Broccoli pie", Dish.MAIN, "broccolipie.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish11ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish11ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish11ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish11ing1);
-    dish4.addIngredient(dish11ing2);
-    dish4.addIngredient(dish11ing3);
+    dish11.addIngredient(dish11ing1);
+    dish11.addIngredient(dish11ing2);
+    dish11.addIngredient(dish11ing3);
     dishes.add(dish11);
 
     Dish dish12 = new Dish("Chocolate cake", Dish.DESERT, "chocolatecake.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish12ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish12ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish12ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish12ing1);
-    dish4.addIngredient(dish12ing2);
-    dish4.addIngredient(dish12ing3);
+    dish12.addIngredient(dish12ing1);
+    dish12.addIngredient(dish12ing2);
+    dish12.addIngredient(dish12ing3);
     dishes.add(dish12);
 
     Dish dish13 = new Dish("Red cake", Dish.DESERT, "redcake.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish13ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish13ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish13ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish13ing1);
-    dish4.addIngredient(dish13ing2);
-    dish4.addIngredient(dish13ing3);
+    dish13.addIngredient(dish13ing1);
+    dish13.addIngredient(dish13ing2);
+    dish13.addIngredient(dish13ing3);
     dishes.add(dish13);
 
     Dish dish14 = new Dish("Fruit sticks", Dish.DESERT, "fruitsticks.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish14ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish14ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish14ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish14ing1);
-    dish4.addIngredient(dish14ing2);
-    dish4.addIngredient(dish14ing3);
+    dish14.addIngredient(dish14ing1);
+    dish14.addIngredient(dish14ing2);
+    dish14.addIngredient(dish14ing3);
     dishes.add(dish14);
 
     Dish dish15 = new Dish("Caramel apples", Dish.DESERT, "caramelapples.jpg", "Slice some nice bread and spread butter on one side. Place a slice of ham on top of it and two slices of tomato as well.");
     Ingredient dish15ing1 = new Ingredient("loaf of bread", 1, "", 15);
     Ingredient dish15ing2 = new Ingredient("tam", 4, "slices", 20);
     Ingredient dish15ing3 = new Ingredient("tomato", 2, "", 12);
-    dish4.addIngredient(dish15ing1);
-    dish4.addIngredient(dish15ing2);
-    dish4.addIngredient(dish15ing3);
+    dish15.addIngredient(dish15ing1);
+    dish15.addIngredient(dish15ing2);
+    dish15.addIngredient(dish15ing3);
     dishes.add(dish15);
   }
-
 }
