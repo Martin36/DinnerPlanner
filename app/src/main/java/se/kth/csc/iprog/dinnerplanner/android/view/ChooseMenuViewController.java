@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -62,6 +64,7 @@ public class ChooseMenuViewController implements View.OnClickListener {
     else {
       int index = this.view.buttons.indexOf(view);
       Set<Dish> dishes = model.getDishes();
+      NumberFormat nf = new DecimalFormat("##.##");
       for (Iterator<Dish> it = dishes.iterator(); it.hasNext(); ) {
         final Dish d = it.next(); // Can access it from inner class
         if (d.getName() == this.view.dishNames.get(index)) {
@@ -83,9 +86,10 @@ public class ChooseMenuViewController implements View.OnClickListener {
           TextView courseName = (TextView) layout.findViewById(R.id.course_name_popup);
           courseName.setText(d.getName());
 
+
           TextView coursePrice = (TextView) layout.findViewById(R.id.course_price_popup);
           double costString = model.getNumberOfGuests() * d.getCost();
-          coursePrice.setText("Total Cost: "+costString + "\n" + "Cost/Person: " + d.getCost());
+          coursePrice.setText("Total Cost: "+nf.format(costString) + "\n" + "Cost/Person: " + nf.format(d.getCost()));
 
           //Create the popup
           final PopupWindow popup = new PopupWindow(view);

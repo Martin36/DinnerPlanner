@@ -32,8 +32,8 @@
             android:paddingLeft="10dp"
             android:paddingStart="10dp"
             android:paddingRight="10dp"
-            android:text="Total Cost: 1000 kr"
-            android:id="@+id/total_cost"
+            android:text="Total Cost: 0kr"
+            android:id="@+id/total_cost_choose_menu"
             android:textSize="20sp"/>
 
     </LinearLayout>
