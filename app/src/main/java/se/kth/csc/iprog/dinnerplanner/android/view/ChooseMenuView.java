@@ -14,6 +14,10 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
@@ -38,13 +42,14 @@ public class ChooseMenuView implements Observer{
   LinearLayout starterRow, mainCourseRow, dessertRow;
   Button createButton;
   Spinner nrGuests;
+  TextView totalCost;
 
-  Button chooseInPopupButton;
 
   public ChooseMenuView(View view, DinnerModel model){
     this.view = view;
     this.model = model;
     model.addObserver(this);
+    totalCost = (TextView) view.findViewById(R.id.total_cost_choose_menu);
     buttons = new ArrayList<ImageButton>();
     dishNames = new ArrayList<String>();
     createButton = (Button) view.findViewById(R.id.create_menu_button);
@@ -136,6 +141,12 @@ public class ChooseMenuView implements Observer{
         this.buttons.get(index).setAlpha(0.5f);
       }
     }
-   // if()
+    changeTotalCost();
+
+  }
+
+  private void changeTotalCost(){
+    NumberFormat nf = new DecimalFormat("##.##");
+    totalCost.setText("Total Cost: " + nf.format(model.getTotalMenuPrice()) + "kr");
   }
 }

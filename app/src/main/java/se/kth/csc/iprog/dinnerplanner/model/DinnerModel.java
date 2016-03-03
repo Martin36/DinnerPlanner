@@ -95,7 +95,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
     for (Ingredient i : allIngredients) {
       totalPrice += i.getPrice();
     }
-    return totalPrice;
+    return nrOfGuests * totalPrice;
   }
 
   @Override
