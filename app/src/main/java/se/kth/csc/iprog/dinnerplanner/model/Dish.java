@@ -72,4 +72,11 @@ public class Dish {
 		return false;
 	}
 
+	public double getCost(){
+		double cost = 0;
+		for(Ingredient i: ingredients){
+			cost += i.getPrice();
+		}
+		return cost;
+	}
 }
